@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Project name="2048">
+        <Folder name="js">
+            <File name="jquery-2.0.1.min.js" />
+        </Folder>
+        <Folder name="css">
+            <File name="theme.css" />
+        </Folder>
+        <File name="js2048.html" />
+    </Project>
+</NotepadPlus>
