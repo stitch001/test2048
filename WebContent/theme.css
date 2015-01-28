@@ -1,10 +1,14 @@
-.common
-{
-	width:100px;
-	height:50px;
-	background-color:yellow;
-	float:left;
-	border:solid 1px red;
+.common {
+    width: 100px;
+    height: 100px;
+    background-color: #EEEEEE;
+    float: left;
+    border: solid 1px transparent;
+    margin: 0 0 2px 2px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 32pt;
+    border-radius: 5px;
 }
 
 .left{
@@ -14,7 +18,26 @@
 .area {
     width:500px;
     height:220px;
-
     margin:0 auto;
+}
+.div2 {
+    background-color:rgb(220, 218, 218);
+}
 
+.div4 {
+    background-color:rgb(220, 198, 198);
+}
+
+.div8 {
+    background-color:rgb(220, 178, 178);
+}
+
+.div16 {
+    background-color:rgb(220, 158, 158);
+}
+.div32 {
+    background-color:rgb(220, 138, 138);
+}
+.div64 {
+    background-color:rgb(220, 118, 118);
 }

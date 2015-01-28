@@ -2,8 +2,8 @@
 
 
 var M = 4;
-var intarr = [[16, 4, 2, 0], [8, 64, 16, 32], [32, 2, 128, 2], [2, 4, 2, 2]];
-
+//var intarr = [[16, 4, 2, 0], [8, 64, 16, 32], [32, 2, 128, 2], [2, 4, 2, 2]];
+var intarr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
 
 //在div中输出内容
 function print() {
@@ -11,8 +11,16 @@ function print() {
         for (var j = 0; j < M ; j++) {
             if (intarr[i][j] > 0) {
                 $("#" + i + "_" + j).html(intarr[i][j]);
+                var b = Math.abs(255 - intarr[i][j]*10);
+                if (b < 200) {
+                    $("#" + i + "_" + j).css({"color":"white"});
+                } else {
+                    $("#" + i + "_" + j).css({ "color": "black" });
+                }
+                $("#" + i + "_" + j).css({ "background-color": "rgb(220," + b + "," + b + ")" });
             } else {
                 $("#" + i + "_" + j).html("");
+                $("#" + i + "_" + j).css({ "background-color": "#EEEEEE" });
             }
         }
 }
