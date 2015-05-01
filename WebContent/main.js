@@ -4,6 +4,40 @@
 var M = 4;
 //var intarr = [[16, 4, 2, 0], [8, 64, 16, 32], [32, 2, 128, 2], [2, 4, 2, 2]];
 var intarr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+var arrStack = [];
+var scoreStack = [];
+
+//存储当前状态
+function restoreState()
+{
+	var arr = getEmptyIntArr();
+	for(var i = 0 ; i < M ; i++)
+	{
+		for(var j = 0 ; j< M ;j++)
+		{
+			arr[i][j] = intarr[i][j];
+		}
+		
+	}
+	arrStack.push(arr);
+}
+//回复栈顶元素到数组中
+function undoState()
+{
+	var arr = arrStack.pop();
+	intarr = arr;
+}
+
+//获取一个新的数组
+function getEmptyIntArr()
+{
+	var arr = new Array();
+	arr[0] = [0,0,0,0];
+	arr[1] = [0,0,0,0];
+	arr[2] = [0,0,0,0];
+	arr[3] = [0,0,0,0];
+	return arr;
+}
 
 //在div中输出内容
 function print() {

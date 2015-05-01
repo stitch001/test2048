@@ -1,10 +1,35 @@
+#score_span
+{
+  float: left;
+  display: block;
+  font-family: serif;
+  line-height: 100px;
+  font-size: xx-large
+	
+}
+
+#divButtonBanner
+{
+	
+	
+}
+
+#headerDiv
+{
+	width: 425px;
+	height:100px;
+	border:solid 1px black;
+	margin: 2px auto;
+	border-radius: 10px;
+}
+
 .common {
     width: 100px;
     height: 100px;
     background-color: #EEEEEE;
     float: left;
     border: solid 1px transparent;
-    margin: 0 0 2px 2px;
+    margin: 0 0 3px 3px;
     text-align: center;
     line-height: 100px;
     font-size: 32pt; 
@@ -16,7 +41,7 @@
 }
 
 .area {
-    width:500px;
+    width:425px;
     height:220px;
     margin:0 auto;
 }

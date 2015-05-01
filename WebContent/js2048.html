@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>no Title</title>
@@ -15,6 +15,7 @@
             //
             print();
             $(window).keyup(function(e){
+            	restoreState();
 				//2.压缩
                 if (press(e.keyCode)) {
                     //3.合并
@@ -46,6 +47,7 @@
     </script>
 </head>
 <body>
+    <div id="headerDiv" ><span id="score_span">SCORE</span></div>
     <div class="area">
         <div class="left">
             <div id="0_0" class="common"></div><div id="0_1" class="common"></div><div id="0_2" class="common"></div><div id="0_3" class="common"></div>
@@ -60,7 +62,10 @@
             <div id="3_0" class="common"></div><div id="3_1" class="common"></div><div id="3_2" class="common"></div><div id="3_3" class="common"></div>
         </div>
     </div>
-
+	<div id="divButtonBanner">
+		<button class="btn">UNDO</button>
+		<button class="buttonNew">NEW</button>	
+	</div>
 
 
 </body>
