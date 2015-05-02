@@ -1,26 +1,59 @@
+body {
+    margin:0;
+}
+div#headerDiv > span {
+    font-family: Arial;
+    line-height: 100px;
+    font-size: xx-large;
+    display:block;
+}
+
 #score_span
 {
-  float: left;
-  display: block;
-  font-family: serif;
-  line-height: 100px;
-  font-size: xx-large
+    float:left;
+    width:auto;
+}
+#score_num {
 	
+    text-align:right;
+    float:right;
+    margin:0 7px 0 0;
+   
 }
 
 #divButtonBanner
 {
-	
-	
+	margin:2px auto;
+    width:425px;
 }
 
+button.buttonBase {
+    width: auto;
+    height: 50px;
+    font-size: 20pt;
+    border-radius: 10px;
+    border: solid 2px black;
+    cursor:pointer;
+}
+.btnUndo {
+    background-color: #41FF00;
+}
+
+.btnNew {
+    background-color: #ED3C1C;
+}
+.btnSubmit {
+    background-color: #EDC31C;
+}
 #headerDiv
 {
-	width: 425px;
-	height:100px;
-	border:solid 1px black;
-	margin: 2px auto;
-	border-radius: 10px;
+	background-color: #A2DCED;
+    height: 100px;
+    border: solid 2px black;
+    margin: 2px auto;
+    border-radius: 10px;
+    width: 425px;
+    text-indent: 15px
 }
 
 .common {
@@ -33,7 +66,8 @@
     text-align: center;
     line-height: 100px;
     font-size: 32pt; 
-    border-radius: 5px;   
+    border-radius: 5px;
+    font-family: Arial;
 }
 
 .left{
@@ -42,7 +76,7 @@
 
 .area {
     width:425px;
-    height:220px;
+    height:430px;
     margin:0 auto;
 }
 .div2 {
@@ -65,4 +99,38 @@
 }
 .div64 {
     background-color:rgb(220, 118, 118);
+}
+
+.bg {
+    width:100%;
+    height:100%;
+    z-index:-999;
+    background-color:rgba(92, 84, 84, 0);
+    position:absolute;
+    margin:0;
+    display:none;
+}
+
+#confirmDialog {
+    border-radius:10px;
+    width:300px;
+    margin: 200px auto;
+    background-color:silver;
+}
+
+span.fontArial {
+    font-family:Arial;
+}
+
+#confirmBanner {
+    font-size:20pt;
+    text-align:center;
+    line-height:100px;
+}
+
+#confirmButtons {
+    text-align:center;
+}
+#confirmButtons > .confirmBt {
+    width:60px;
 }

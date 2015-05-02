@@ -6,6 +6,7 @@ var M = 4;
 var intarr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
 var arrStack = [];
 var scoreStack = [];
+var isAlert = false;
 
 //存储当前状态
 function restoreState()
@@ -24,8 +25,17 @@ function restoreState()
 //回复栈顶元素到数组中
 function undoState()
 {
-	var arr = arrStack.pop();
-	intarr = arr;
+    var arr = arrStack.pop();
+    if (!(arr === undefined))
+    {
+        for (var i = 0 ; i < M ; i++) {
+            for (var j = 0 ; j < M ; j++) {
+                intarr[i][j] = arr[i][j];
+            }
+
+        }
+    }
+	
 }
 
 //获取一个新的数组
@@ -236,4 +246,16 @@ function isLose()
     }
     return lose;
     
+}
+
+function showHideDiv()
+{
+    var bgDiv = $("#bgConfirm");
+    var cssBack = { "display":"none", "z-index": -999, "background-color": "transparent" };
+    var cssFront = { "display": "block", "z-index": 1, "background-color": "rgba(92, 84, 84, 0.73)" }
+    if (isAlert) {
+        bgDiv.css(cssFront);
+    } else {
+        bgDiv.css(cssBack);
+    }
 }

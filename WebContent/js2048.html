@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>no Title</title>
     <meta charset="UTF-8" />
     <script src="jquery-2.0.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="theme.css" />
+    <link href="bootstrap-theme.min.css" rel="stylesheet" />
     <script src="main.js"></script>
     <script>
         $(function () {
+            addButtonEvents();
             //1.输出
             generate();
             var mayLose = false;
@@ -44,10 +46,59 @@
                 
             });
         });
+
+        //增加按钮事件
+        function addButtonEvents()
+        {
+            $("#btn_undo").on({
+                "click": function () {
+                    undoState();
+                    print();
+
+                }
+            });
+
+            $("#btn_new").on({
+                "click": function () {
+                    isAlert = !isAlert;
+                    showHideDiv();
+                }
+            });
+
+            $("#confirmNo").on({
+                "click": function () {
+                    isAlert = !isAlert;
+                    showHideDiv();
+                }
+            });
+        }
     </script>
 </head>
 <body>
-    <div id="headerDiv" ><span id="score_span">SCORE</span></div>
+    <!-- background confirm start-->
+    <div class="bg" id="bgConfirm">
+        <div id="confirmDialog">
+            <div id="confirmBanner"><span class="fontArial">Are you sure?</span></div>
+            <div id="confirmButtons">
+                <button class="buttonBase confirmBt btnUndo" id="confirmYes">Yes</button>
+                <button class="buttonBase confirmBt btnNew" id="confirmNo">No</button>
+            </div>
+            
+        </div>
+    </div>
+    <!-- background confirm end-->
+    <!-- background gameover start-->
+    <!-- background gameover end-->
+
+
+    <!-- head start-->
+    <div id="headerDiv" >
+        <span id="score_span" class="fontArial">SCORE</span>
+        <span id="score_num" class="fontArial" >0</span>
+    </div>
+    <!-- headend-->
+
+    <!-- main blocks start-->
     <div class="area">
         <div class="left">
             <div id="0_0" class="common"></div><div id="0_1" class="common"></div><div id="0_2" class="common"></div><div id="0_3" class="common"></div>
@@ -62,11 +113,15 @@
             <div id="3_0" class="common"></div><div id="3_1" class="common"></div><div id="3_2" class="common"></div><div id="3_3" class="common"></div>
         </div>
     </div>
-	<div id="divButtonBanner">
-		<button class="btn">UNDO</button>
-		<button class="buttonNew">NEW</button>	
-	</div>
+    <!-- main blocks end-->
 
+    <!-- footer buttons start-->
+	<div id="divButtonBanner">
+        <button class="buttonBase btnUndo" id="btn_undo">UNDO</button>
+        <button class="buttonBase btnNew" id="btn_new">NEW</button>
+        <button class="buttonBase btnSubmit" id="btn_submit">SUBMIT</button>		
+	</div>
+    <!--footer buttons end-->
 
 </body>
 
